@@ -6,7 +6,7 @@ import Hero from '../components/Hero'
 
 const Home = () => {
     return (
-        <div className='drawer drawer-content flex flex-col min-h-screen overflow-x-hidden'>
+        <div className='drawer drawer-content flex flex-col'>
             <Header />
             <Footer />
             <Outlet/>

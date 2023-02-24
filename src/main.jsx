@@ -6,6 +6,7 @@ import Home from './pages/Home.page';
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Hero from './components/Hero';
+import ChallengePage from './pages/Challenge.page';
 
 const router = createBrowserRouter([
   {
@@ -23,9 +24,13 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <Signup />,
-      },
+      }
     ],
   },
+  {
+    path:'/challenge',
+    element: <ChallengePage />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

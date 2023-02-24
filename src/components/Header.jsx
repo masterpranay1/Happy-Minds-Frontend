@@ -11,7 +11,7 @@ function Header() {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><a>Challenge</a></li>
+            <li><Link to='/challenge'>Challenge</Link></li>
             <li><a>Blogs</a></li>
             <li><a>About</a></li>
           </ul>
