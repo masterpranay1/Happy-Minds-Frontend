@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-footer::after{
+footer::after {
     content: '';
     background: url('https://readme-typing-svg.herokuapp.com?font=Montserrat&duration=3000&pause=500&color=05C46B&width=435&lines=Vaibhav+Kumar+Singh;Pranay+Raj;Rizul+Bhardwaj;Vedang+Mishra;Sonu+Kumar');
     width: 240px;
     height: 36px;
     margin-left: -0.5em;
+}
+
+@media (max-width: 768px) {
+    footer::after {
+        margin-top: -1.5em;
+        width: 100%;
+        margin-left: -5em;
+        background: url('https://readme-typing-svg.herokuapp.com?font=Montserrat&duration=3000&pause=500&color=05C46B&width=435&lines=Vaibhav+Kumar+Singh;Pranay+Raj;Rizul+Bhardwaj;Vedang+Mishra;Sonu+Kumar&center=true');
+    }
 }
