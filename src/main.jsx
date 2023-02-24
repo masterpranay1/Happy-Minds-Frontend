@@ -5,19 +5,26 @@ import './index.css'
 import Home from './pages/Home.page';
 import Login from './components/Login'
 import Signup from './components/Signup'
+import Hero from './components/Hero';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
+    children: [
+      {
+        index: true,
+        element: <Hero />,
+      },
+      {
+        path: "signin",
+        element: <Login />,
+      },
+      {
+        path: "signup",
+        element: <Signup />,
+      },
+    ],
   },
 ]);
 
