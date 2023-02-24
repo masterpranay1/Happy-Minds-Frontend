@@ -3,7 +3,7 @@ import HeroIllustration from '../assets/hero-illustration.png'
 
 const Hero = () => {
     return (
-        <div className="hero flex-1 bg-base-100">
+        <div className="hero -z-10 flex-1 bg-base-100">
             <div className="hero-content flex-row-reverse">
                 <img className='hidden lg:block' src={HeroIllustration} />
                 <div className='flex flex-col items-center lg:items-start'>
