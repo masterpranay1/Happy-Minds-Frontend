@@ -1,6 +1,24 @@
-import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const navigate = useNavigate();
+  const handleLogin = async() => { 
+    if(emailRef.current.value!=='' && passwordRef.current.value!==''){
+      const response = await fetch('https://happy-minds-backend-production.up.railway.app/login', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: emailRef.current.value,
+          password: passwordRef.current.value
+        }),
+      })
+      const data = await response.json();
+      console.log(data);
+      navigate('/challenge');
+    }
+  };
   return (
     <div className="hero flex-1 -mt-8 bg-base-100">
 
@@ -23,6 +41,7 @@ const Login = () => {
                 type="text"
                 placeholder="email"
                 className="input input-bordered"
+                ref={emailRef}
               />
             </div>
             <div className="form-control">
@@ -30,9 +49,10 @@ const Login = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 placeholder="password"
                 className="input input-bordered"
+                ref={passwordRef}
               />
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
@@ -41,7 +61,7 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6 ">
-              <button className="btn btn-secondary text-base-100">Login</button>
+              <button className="btn btn-secondary text-base-100" onClick={handleLogin}>Login</button>
             </div>
 
             <div className="sign-up-link text-center mt-2">

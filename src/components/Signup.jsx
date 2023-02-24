@@ -1,6 +1,25 @@
-import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const confirmPasswordRef = useRef();
+  const navigate = useNavigate();
+  const handleSignup = async () => {
+    if (emailRef.current.value !== '' && passwordRef.current.value !== '' && confirmPasswordRef.current.value !== '') {
+      const response = await fetch('https://happy-minds-backend-production.up.railway.app/signup', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: emailRef.current.value,
+          password: passwordRef.current.value,
+        })
+      })
+      const data = await response.json();
+      console.log(data);
+      navigate('/login');
+    }
+  };
   return (
     <div className="hero flex-1 -mt-8 bg-base-100">
 
@@ -23,6 +42,7 @@ const Signup = () => {
                 type="text"
                 placeholder="Enter your email"
                 className="input input-bordered"
+                ref={emailRef}
               />
             </div>
             <div className="form-control">
@@ -30,9 +50,10 @@ const Signup = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 placeholder="Enter your password"
                 className="input input-bordered"
+                ref={passwordRef}
               />
             </div>
 
@@ -41,14 +62,15 @@ const Signup = () => {
                 <span className="label-text">Confirm Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 placeholder="Enter your password to confirm"
                 className="input input-bordered"
+                ref={confirmPasswordRef}
               />
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn btn-secondary text-base-100">Sign up</button>
+              <button className="btn btn-secondary text-base-100" onClick={handleSignup}>Sign up</button>
             </div>
 
             <div className="sign-up-link text-center mt-2">
