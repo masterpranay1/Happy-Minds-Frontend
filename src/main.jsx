@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css'
 import Home from './pages/Home.page';
+import Header from './components/header'
+import Login from './components/Login'
+import Signup from './components/Signup'
 
 const router = createBrowserRouter([
   {
