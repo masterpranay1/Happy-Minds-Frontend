@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const Login = () => {
   return (
-    <div className="hero min-h-screen bg-base-100">
+    <div className="hero flex-1 -mt-8 bg-base-100">
 
       <div className="hero-content flex-col">
 
@@ -38,12 +40,12 @@ const Login = () => {
                 </a>
               </label>
             </div>
-            <div className="form-control mt-6 decoration-base-100">
+            <div className="form-control mt-6 ">
               <button className="btn btn-secondary text-base-100">Login</button>
             </div>
 
             <div className="sign-up-link text-center mt-2">
-                <span>Don't have an account. <a className="link">Sign up</a></span>
+                <span>Don't have an account. <Link to='/signup' className="link">Sign up</Link></span>
             </div>
           </div>
         </div>
