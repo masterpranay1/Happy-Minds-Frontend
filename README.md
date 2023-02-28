@@ -4,7 +4,7 @@ A 30-days Mental Fitness challenge Web Application completely build in 3 hours f
 This repo contains the frontend of the code which is written in React using Daisy UI, a component library of Tailwind CSS.</br>
 The frontend is hosted on the [render.com](render.com).
 
-Live Link : [Click Here](Happy-minds.onrender.com)
+Live Link : [Click Here](https://happy-minds.onrender.com)
 
 ## Contents ♨️
 - [Build With](#build-with)
